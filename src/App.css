@@ -18,30 +18,49 @@ body {
 
     font-size : 200%;
     text-decoration : none;
-} .app-navbar-list-image {
-    width : auto;
-    height : 10vh;
 } .app-navbar-list-link {
     font-weight : bold;
     text-decoration : none;
     color : black;
 } .app-section {
     margin : 0px 25vw;
+} .app-card {
+    margin : 64px 0px;
+
+    background-color : #DFDFDF;
+    border : solid black;
+    border-radius : 16px;
+} .width-auto {
+    width : auto;
+    height : 10vh;
+} .height-auto {
+    width : 100%;
+    height : auto;
 } .horizontal-flex {
     display : flex;
     width : 100%;
+} .margin {
+    margin : 16px;
 } .vertical-margin {
     margin : 64px 0px;
 } .horizontal-padding {
     padding : 0px 20px;
+} .vertical-padding {
+    padding : 20px 0px;
 } .width-50 {
     width : 50%;
-} .button {
+} .start-button {
     width : 100%;
 
     padding : 16px;
 
     background-color : #007FFF;
+
+    border-radius : 16px;
+} .details-button {
+    width : 100%;
+
+    background-color : #3FBFFF;
 
     border-radius : 16px;
 } .text-center {

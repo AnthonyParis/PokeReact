@@ -16,7 +16,7 @@ export default function App() {
             <div className="app-navbar">
                 <ul className="app-navbar-list">
                     <Link className="app-navbar-list-link" to="/">
-                        <img className="app-navbar-list-image" src={ arceus } alt="PokéReact"/>
+                        <img className="width-auto" src={ arceus } alt="PokéReact"/>
                     </Link>
                     <Link className="app-navbar-list-link" to="/"> Home </Link>
                     <Link className="app-navbar-list-link" to="/list"> List </Link>
