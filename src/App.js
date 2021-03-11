@@ -8,14 +8,19 @@ import Details from "./components/Details"
 
 import "./App.css"
 
+import arceus from "./images/arceus.png"
+
 export default function App() {
     return (
         <Router>
-            <div>
-                <ul>
-                    <Link to="/"> Home </Link>
-                    <Link to="/list"> List </Link>
-                    <Link to="/search"> Search </Link>
+            <div className="app-navbar">
+                <ul className="app-navbar-list">
+                    <Link className="app-navbar-list-link" to="/">
+                        <img className="app-navbar-list-image" src={ arceus } alt="PokéReact"/>
+                    </Link>
+                    <Link className="app-navbar-list-link" to="/"> Home </Link>
+                    <Link className="app-navbar-list-link" to="/list"> List </Link>
+                    <Link className="app-navbar-list-link" to="/search"> Search </Link>
                 </ul>
             </div>
             <Switch>
