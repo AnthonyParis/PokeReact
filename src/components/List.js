@@ -7,6 +7,7 @@ import axios from "axios"
 export default function List() {
     const [list, setList] = useState([])
     const [page, setPage] = useState(0)
+    const [search, setSearch] = useState("")
 
     const loadList = () => {
         axios({
@@ -26,10 +27,11 @@ export default function List() {
     return (
         <section className="app-section">
             <h1 className="vertical-margin text-center"> List </h1>
+            <input id="search" className="width-100 vertical-margin" type="text" onChange={() => setSearch(document.getElementById("search").value)}/>
             { list.map(pokemon => {
-                return <Card key={ pokemon.name } url={ pokemon.url }/>
+                if(pokemon.name.includes(search)) return <Card key={ pokemon.name } url={ pokemon.url }/>
             }) }
-            <button onClick={() => setPage(page + 1)}> Load New Pokémons </button>
+            <button className="start-button" onClick={() => setPage(page + 1)}> Load New Pokémons </button>
         </section>
     )
 }
