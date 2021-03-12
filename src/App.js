@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import List from "./components/List"
 import Bookmarks from "./components/Bookmarks"
 import Details from "./components/Details"
+import Style from "./Style"
 
 import "./App.css"
 
@@ -39,6 +40,7 @@ export default function App() {
                     <Home/>
                 </Route>
             </Switch>
+            <Style/>
         </Router>
     )
 }

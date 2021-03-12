@@ -6,7 +6,7 @@ import axios from "axios"
 export default function Details() {
     const { id } = useParams()
     const [data, setData] = useState([])
-    const [fav, setFav] = useState(localStorage.getItem("bookmarks").includes(id))
+    const [fav, setFav] = useState(false)
 
     const loadList = () => {
         axios({
@@ -20,8 +20,12 @@ export default function Details() {
     }
 
     useEffect(() => {
+        let bookmarks = localStorage.getItem("bookmarks")
+
+        if(bookmarks != null && bookmarks.includes(id)) setFav(true)
+
         loadList()
-    })
+    }, [])
 
     if(data.length === 0) {
         return (
@@ -32,15 +36,13 @@ export default function Details() {
     const addBookmarks = pokemon => {
         let bookmarks = localStorage.getItem("bookmarks")
 
-        if(bookmarks.includes("[") && bookmarks.includes("]")) bookmarks = JSON.parse(bookmarks)
+        if(bookmarks != null && bookmarks.includes("[") && bookmarks.includes("]")) bookmarks = JSON.parse(bookmarks)
         else bookmarks = []
 
         bookmarks.push(pokemon)
 
         localStorage.setItem("bookmarks", JSON.stringify(bookmarks))
         setFav(true)
-
-        console.log(localStorage.getItem("bookmarks"))
     }
 
     const removeBookmarks = pokemon => {
@@ -55,8 +57,6 @@ export default function Details() {
 
         localStorage.setItem("bookmarks", JSON.stringify(bookmarks))
         setFav(false)
-
-        console.log(localStorage.getItem("bookmarks"))
     }
 
     let bookmarks = <button className="vertical-margin start-button" onClick={() => addBookmarks( data.name )}> Add to Bookmarks </button>
