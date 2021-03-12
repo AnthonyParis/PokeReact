@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
 
 import Home from "./components/Home"
 import List from "./components/List"
-import Search from "./components/Search"
+import Bookmarks from "./components/Bookmarks"
 import Details from "./components/Details"
 
 import "./App.css"
@@ -14,21 +14,23 @@ export default function App() {
     return (
         <Router>
             <div className="app-navbar">
-                <ul className="app-navbar-list">
+                <div className="width-33">
                     <Link className="app-navbar-list-link" to="/">
                         <img className="width-auto" src={ arceus } alt="PokéReact"/>
                     </Link>
+                </div>
+                <ul className="width-66 app-navbar-list">
                     <Link className="app-navbar-list-link" to="/"> Home </Link>
                     <Link className="app-navbar-list-link" to="/list"> List </Link>
-                    <Link className="app-navbar-list-link" to="/search"> Search </Link>
+                    <Link className="app-navbar-list-link" to="/bookmarks"> Bookmarks </Link>
                 </ul>
             </div>
             <Switch>
                 <Route path="/list">
                     <List/>
                 </Route>
-                <Route path="/search">
-                    <Search/>
+                <Route path="/bookmarks">
+                    <Bookmarks/>
                 </Route>
                 <Route path="/details/:id">
                     <Details/>

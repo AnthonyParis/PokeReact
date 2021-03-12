@@ -6,7 +6,7 @@ import axios from "axios"
 export default function Details() {
     const { id } = useParams()
     const [data, setData] = useState([])
-    const [fav, setFav] = useState(false)
+    const [fav, setFav] = useState(localStorage.getItem("bookmarks").includes(id))
 
     const loadList = () => {
         axios({
@@ -21,9 +21,9 @@ export default function Details() {
 
     useEffect(() => {
         loadList()
-    }, [])
+    })
 
-    if(data.length == 0) {
+    if(data.length === 0) {
         return (
             <p className="text-center"> Loading... </p>
         )
@@ -51,7 +51,7 @@ export default function Details() {
 
         const index = bookmarks.indexOf(pokemon)
 
-        if(index != -1) bookmarks.splice(index, 1)
+        if(index !== -1) bookmarks.splice(index, 1)
 
         localStorage.setItem("bookmarks", JSON.stringify(bookmarks))
         setFav(false)

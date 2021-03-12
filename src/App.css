@@ -4,21 +4,28 @@ body {
     height : 100vh;
 
     margin : 0px;
-    margin-top : -32px;
 } .app-navbar {
-    height : 15vh;
+    min-height : 15vh;
+
+    display : flex;
+    align-items : center;
 
     background-color : #DFDFDF;
 } .app-navbar-list {
+    display : flex;
+    flex-direction : column;
+
+
     height : 100%;
 
-    display : flex;
-    justify-content : space-around;
-    align-items : center;
+    padding : 0px;
 
     font-size : 200%;
     text-decoration : none;
 } .app-navbar-list-link {
+    margin-left : 32px;
+    justify-content : center;
+
     font-weight : bold;
     text-decoration : none;
     color : black;
@@ -42,6 +49,15 @@ body {
 } .width-auto {
     width : auto;
     height : 10vh;
+} .width-66 {
+    width : 66%;
+} .width-50 {
+    width : 50%;
+} .width-33 {
+    display : flex;
+    justify-content : center;
+
+    width : 33%;
 } .height-auto {
     width : 100%;
     height : auto;
@@ -56,20 +72,12 @@ body {
     padding : 0px 20px;
 } .vertical-padding {
     padding : 20px 0px;
-} .width-50 {
-    width : 50%;
 } .start-button {
     width : 100%;
 
     padding : 16px;
 
     background-color : #007FFF;
-
-    border-radius : 16px;
-} .details-button {
-    width : 100%;
-
-    background-color : #3FBFFF;
 
     border-radius : 16px;
 } .text-center {
