@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import List from "./components/List"
 import Bookmarks from "./components/Bookmarks"
 import Details from "./components/Details"
+import Custom from "./components/Custom"
 import Style from "./Style"
 
 import "./App.css"
@@ -24,6 +25,7 @@ export default function App() {
                     <Link className="app-navbar-list-link" to="/"> Home </Link>
                     <Link className="app-navbar-list-link" to="/list"> List </Link>
                     <Link className="app-navbar-list-link" to="/bookmarks"> Favoris </Link>
+                    <Link className="app-navbar-list-link" to="/custom"> Custom </Link>
                 </ul>
             </div>
             <Switch>
@@ -35,6 +37,9 @@ export default function App() {
                 </Route>
                 <Route path="/details/:id">
                     <Details/>
+                </Route>
+                <Route path="/custom/">
+                    <Custom/>
                 </Route>
                 <Route path="/">
                     <Home/>

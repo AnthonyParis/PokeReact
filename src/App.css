@@ -55,6 +55,8 @@
     margin : 16px;
 } .vertical-margin {
     margin : 64px 0px;
+} .vertical-small-margin {
+    margin : 16px 0px;
 } .padding {
     padding : 20px;
 } .horizontal-padding {
