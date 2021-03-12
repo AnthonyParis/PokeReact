@@ -15,15 +15,15 @@ export default function App() {
     return (
         <Router>
             <div className="app-navbar">
-                <div className="width-33">
+                <div className="width-50 text-center">
                     <Link className="app-navbar-list-link" to="/">
                         <img className="width-auto" src={ arceus } alt="PokéReact"/>
                     </Link>
                 </div>
-                <ul className="width-66 app-navbar-list">
+                <ul className="width-50 app-navbar-list">
                     <Link className="app-navbar-list-link" to="/"> Home </Link>
                     <Link className="app-navbar-list-link" to="/list"> List </Link>
-                    <Link className="app-navbar-list-link" to="/bookmarks"> Bookmarks </Link>
+                    <Link className="app-navbar-list-link" to="/bookmarks"> Favoris </Link>
                 </ul>
             </div>
             <Switch>
