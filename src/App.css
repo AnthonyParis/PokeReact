@@ -24,6 +24,15 @@ body {
     color : black;
 } .app-section {
     margin : 0px 25vw;
+} .app-section-table {
+    width : 100%;
+
+    border-collapse : collapse;
+    border : solid black;
+} .app-section-item {
+    padding : 16px;
+
+    border : solid 1px grey;
 } .app-card {
     margin : 64px 0px;
 
