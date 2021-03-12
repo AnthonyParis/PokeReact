@@ -29,7 +29,7 @@ export default function List() {
             <h1 className="vertical-margin text-center"> List </h1>
             <input id="search" className="width-100 vertical-margin" type="text" onChange={() => setSearch(document.getElementById("search").value)}/>
             { list.map(pokemon => {
-                if(pokemon.name.includes(search)) return <Card key={ pokemon.name } url={ pokemon.url }/>
+                return <Card key={ pokemon.name } url={ pokemon.url } search={ search }/>
             }) }
             <button className="start-button" onClick={() => setPage(page + 1)}> Load New Pokémons </button>
         </section>

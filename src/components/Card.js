@@ -33,7 +33,7 @@ export default function Card(props) {
         }).catch(error => {
             console.log(error)
         })
-    })
+    }, [])
 
     const getType = type => {
         if(type === "grass") return grass
@@ -60,7 +60,7 @@ export default function Card(props) {
         return (
             <p className="text-center"> Loading... </p>
         )
-    } else {
+    } else if(data.name.includes(props.search)) {
         return (
             <article className="app-card vertical-padding">
                 <h1 className="text-center"> { data.name } </h1>
@@ -74,5 +74,5 @@ export default function Card(props) {
                 </div>
             </article>
         )
-    }
+    } else return <div> </div>
 }

@@ -15,7 +15,7 @@ export default function Bookmarks() {
             <h1 className="vertical-margin text-center"> Bookmarks </h1>
             <input id="search" className="width-100 vertical-margin" type="text" onChange={() => setSearch(document.getElementById("search").value)}/>
             { bookmarks.map(pokemon => {
-                if(pokemon.includes(search)) return <Card key={ pokemon } url={ "https://pokeapi.co/api/v2/pokemon/" + pokemon }/>
+                return <Card key={ pokemon } url={ "https://pokeapi.co/api/v2/pokemon/" + pokemon } search={ search }/>
             }) }
         </section>
     )
