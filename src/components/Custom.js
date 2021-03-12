@@ -16,7 +16,7 @@ export default function List() {
         event.preventDefault()
 
         const newCustom = [...list, {
-            "id" : Math.random() * 65536,
+            "id" : parseInt(Math.random() * 65536),
             "name" : document.getElementById("name").value,
             "image" : document.getElementById("image").value,
             "type" : document.querySelector("[name='type']:checked").value,
@@ -29,11 +29,29 @@ export default function List() {
         localStorage.setItem("custom", JSON.stringify(newCustom))
     }
 
+    const remove = id => {
+        let copyList = list
+        let index = -1
+
+        for(let i = 0; i < copyList.length; i ++) {
+            if(list[i].id == id) index = i;
+        }
+
+        if(index !== -1) copyList.splice(index, 1)
+
+        setList(copyList)
+        localStorage.setItem("custom", JSON.stringify(copyList))
+        window.location.reload()
+    }
+
     return (
         <section className="app-section">
             <h1 className="vertical-margin text-center"> Custom </h1>
             { list.map(pokemon => {
-                return <CustomCard key={ pokemon.id } data={ pokemon }/>
+                return <div>
+                    <CustomCard key={ pokemon.id } data={ pokemon }/>
+                    <button className="start-button" onClick={() => remove(pokemon.id)}> Delete { pokemon.name } </button>
+                </div>
             }) }
             <form className="vertical-margin" onSubmit={event => add(event)}>
                 <input id="name" className="width-100 vertical-small-margin vertical-padding" type="text" placeholder="Name"/>
